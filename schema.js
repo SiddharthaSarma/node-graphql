@@ -24,16 +24,18 @@ const CustomerType = new GraphQLObjectType({
 
 const RootQuery = new GraphQLObjectType({
   name: 'RootQuery',
-  customer: {
-    type: CustomerType,
-    args: {
-      id: {type: GraphQLString}
-    },
-    resolve(parentValue, args) {
-      return customers.filter(customer => customer.id == args.id);
+  fields: {
+    customer: {
+      type: CustomerType,
+      args: {
+        id: {type: GraphQLString}
+      },
+      resolve(parentValue, args) {
+        return customers.filter(customer => customer.id == args.id);
+      }
     }
   }
-})
+});
 
 module.exports = new GraphQLSchema({
     query: RootQuery
