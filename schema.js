@@ -31,7 +31,7 @@ const RootQuery = new GraphQLObjectType({
         id: { type: GraphQLString }
       },
       resolve(parentValue, args) {
-        return customers.filter(customer => customer.id == args.id);
+        return customers.filter(customer => customer.id == args.id)[0];
       }
     }
   }
