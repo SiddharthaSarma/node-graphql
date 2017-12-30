@@ -1,0 +1,23 @@
+{
+  "name": "node-graphql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SiddharthaSarma/node-graphql.git"
+  },
+  "keywords": [
+    "node",
+    "graphql"
+  ],
+  "author": "siddharthasarma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SiddharthaSarma/node-graphql/issues"
+  },
+  "homepage": "https://github.com/SiddharthaSarma/node-graphql#readme"
+}
