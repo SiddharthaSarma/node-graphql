@@ -19,5 +19,13 @@
   "bugs": {
     "url": "https://github.com/SiddharthaSarma/node-graphql/issues"
   },
-  "homepage": "https://github.com/SiddharthaSarma/node-graphql#readme"
+  "homepage": "https://github.com/SiddharthaSarma/node-graphql#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "express-graphql": "^0.6.11",
+    "graphql": "^0.11.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.6"
+  }
 }
