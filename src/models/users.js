@@ -1,11 +1,17 @@
 import { UsersDB } from './index';
 export const model = {
-  async getPerson(id) {
+  async getUser(id) {
     return new Promise((resolve, rejects) => {
-      return resolve({
-        name: 'siddhartha',
-        id: id
-      });
+      UsersDB.find(
+        { _id: id },
+        {
+          updatedAt: 0,
+          createdAt: 0
+        },
+        (err, user) => {
+          return resolve(user);
+        }
+      );
     });
   },
   async getPersons(id) {

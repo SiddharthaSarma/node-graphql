@@ -1,9 +1,9 @@
 import { model } from './models/users';
 export const resolvers = {
   Query: {
-    async onePerson(_, { id }) {
-      const person = await model.getPerson(id);
-      return person;
+    async getUser(_, { id }) {
+      const [user] = await model.getUser(id);
+      return user;
     },
     async getAllUsers(_, { id }) {
       const users = await model.getPersons(id);
@@ -11,7 +11,7 @@ export const resolvers = {
     }
   },
   Mutation: {
-    addUser: (_, { input }, context) => {
+    addUser(_, { input }, context) {
       return {
         name: input.name
       };
