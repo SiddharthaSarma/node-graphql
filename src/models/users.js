@@ -1,3 +1,4 @@
+import { UsersDB } from './index';
 export const model = {
   async getPerson(id) {
     return new Promise((resolve, rejects) => {
@@ -9,16 +10,16 @@ export const model = {
   },
   async getPersons(id) {
     return new Promise((resolve, rejects) => {
-      return resolve([
+      UsersDB.find(
+        {},
         {
-          name: 'siddhartha',
-          id: id
+          updatedAt: 0,
+          createdAt: 0
         },
-        {
-          name: 'siddu',
-          id: id
+        (err, users) => {
+          return resolve(users);
         }
-      ]);
+      );
     });
   }
 };

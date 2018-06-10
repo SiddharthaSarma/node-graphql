@@ -1,4 +1,4 @@
-import { model } from './model';
+import { model } from './models/users';
 export const resolvers = {
   Query: {
     async onePerson(_, { id }) {
