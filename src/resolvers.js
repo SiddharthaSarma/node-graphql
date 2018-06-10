@@ -1,13 +1,12 @@
-import { rejects } from 'assert';
-
+import { model } from './model';
 export const resolvers = {
   Query: {
     async onePerson(_, { id }) {
-      const person = await getPerson(id);
+      const person = await model.getPerson(id);
       return person;
     },
     async getAllPersons(_, { id }) {
-      const persons = await getPersons(id);
+      const persons = await model.getPersons(id);
       return persons;
     }
   },
@@ -19,26 +18,3 @@ export const resolvers = {
     }
   }
 };
-
-async function getPerson(id) {
-  return new Promise((resolve, rejects) => {
-    return resolve({
-      name: 'siddhartha',
-      id: id
-    });
-  });
-}
-async function getPersons(id) {
-  return new Promise((resolve, rejects) => {
-    return resolve([
-      {
-        name: 'siddhartha',
-        id: id
-      },
-      {
-        name: 'siddu',
-        id: id
-      }
-    ]);
-  });
-}
