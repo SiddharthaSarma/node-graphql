@@ -17,6 +17,16 @@ input UserInput {
   state: String!
 }
 
+input UserUpdateInput {
+  id: ID!
+  name: String
+  email: String
+  phoneNumber: String
+  street: String
+  city: String
+  state: String
+}
+
 type Query {
   getUser(id: ID!): User
   getAllUsers: [User]
@@ -24,6 +34,7 @@ type Query {
 
 type Mutation {
   addUser(input: UserInput!): User!
+  updateUser(input: UserUpdateInput): User!
   deleteUser(id: ID!): response
 }
 

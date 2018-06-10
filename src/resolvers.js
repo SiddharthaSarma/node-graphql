@@ -13,7 +13,10 @@ export const resolvers = {
   Mutation: {
     async addUser(_, { input }, context) {
       const user = await model.addUser(input);
-      console.log(user);
+      return user;
+    },
+    async updateUser(_, { input }, context) {
+      const [user] = await model.updateUser(input);
       return user;
     },
     async deleteUser(_, { id }, context) {
