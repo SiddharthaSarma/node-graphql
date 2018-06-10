@@ -28,6 +28,26 @@ export const model = {
       );
     });
   },
+  async addUser(input) {
+    return new Promise((resolve, rejects) => {
+      UsersDB.insert(
+        {
+          name: input.name,
+          email: input.email,
+          phoneNumber: input.phoneNumber,
+          street: input.street,
+          city: input.city,
+          state: input.state
+        },
+        (err, user) => {
+          if (err) {
+            return resolve(false);
+          }
+          return resolve(user);
+        }
+      );
+    });
+  },
   async deleteUser(id) {
     return new Promise((resolve, rejects) => {
       UsersDB.remove({ _id: id }, (err, number) => {
