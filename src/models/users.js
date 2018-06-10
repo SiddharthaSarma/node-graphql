@@ -1,5 +1,7 @@
 import { UsersDB } from './index';
+
 export const model = {
+  // Get user details
   async getUser(id) {
     return new Promise((resolve, rejects) => {
       UsersDB.find(
@@ -14,6 +16,8 @@ export const model = {
       );
     });
   },
+
+  // Get each individual single user record
   async getPersons(id) {
     return new Promise((resolve, rejects) => {
       UsersDB.find(
@@ -28,6 +32,8 @@ export const model = {
       );
     });
   },
+
+  // Add new user
   async addUser(input) {
     return new Promise((resolve, rejects) => {
       UsersDB.insert(
@@ -48,6 +54,8 @@ export const model = {
       );
     });
   },
+
+  // Update the user details
   async updateUser(input) {
     return new Promise((resolve, rejects) => {
       const { id: userId } = input;
@@ -87,6 +95,8 @@ export const model = {
       );
     });
   },
+
+  // Delete the user record
   async deleteUser(id) {
     return new Promise((resolve, rejects) => {
       UsersDB.remove({ _id: id }, (err, number) => {

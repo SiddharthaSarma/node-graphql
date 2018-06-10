@@ -11,6 +11,7 @@ const server = new GraphQLServer({
   resolvers
 });
 
+// server options
 const options = {
   port: 8000,
   endpoint: '/graphql',
