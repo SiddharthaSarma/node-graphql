@@ -1,17 +1,22 @@
-type Person {
-  name: String!
+type User {
   id: ID
+  name: String!
+  email: String
+  phoneNumber: String
+  street: String
+  city: String
+  state: String
 }
 
-input PersonInput {
+input UserInput {
   name: String!
 }
 
 type Query {
-  onePerson(id: ID!): Person
-  getAllPersons(id: ID!): [Person]
+  onePerson(id: ID!): User
+  getAllUsers: [User]
 }
 
 type Mutation {
-  personName(input: PersonInput!): Person!
+  addUser(input: UserInput!): User!
 }

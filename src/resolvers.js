@@ -5,16 +5,21 @@ export const resolvers = {
       const person = await model.getPerson(id);
       return person;
     },
-    async getAllPersons(_, { id }) {
-      const persons = await model.getPersons(id);
-      return persons;
+    async getAllUsers(_, { id }) {
+      const users = await model.getPersons(id);
+      return users;
     }
   },
   Mutation: {
-    personName: (_, { input }, context) => {
+    addUser: (_, { input }, context) => {
       return {
         name: input.name
       };
+    }
+  },
+  User: {
+    id(user) {
+      return user._id;
     }
   }
 };
