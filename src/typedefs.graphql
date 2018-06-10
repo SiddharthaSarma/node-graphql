@@ -19,4 +19,10 @@ type Query {
 
 type Mutation {
   addUser(input: UserInput!): User!
+  deleteUser(id: ID!): response
+}
+
+type response {
+  success: Boolean
+  message: String
 }

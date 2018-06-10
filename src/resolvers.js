@@ -15,6 +15,10 @@ export const resolvers = {
       return {
         name: input.name
       };
+    },
+    async deleteUser(_, { id }, context) {
+      const result = await model.deleteUser(id);
+      return result;
     }
   },
   User: {

@@ -27,5 +27,21 @@ export const model = {
         }
       );
     });
+  },
+  async deleteUser(id) {
+    return new Promise((resolve, rejects) => {
+      UsersDB.remove({ _id: id }, (err, number) => {
+        let recordDeleted = true;
+        let message = 'user record deleted successfully';
+        if (err || !number) {
+          recordDeleted = false;
+          message = 'user record is missing';
+        }
+        return resolve({
+          success: recordDeleted,
+          message
+        });
+      });
+    });
   }
 };
