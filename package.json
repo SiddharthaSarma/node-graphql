@@ -23,7 +23,8 @@
   "homepage": "https://github.com/SiddharthaSarma/node-graphql#readme",
   "dependencies": {
     "graphql-yoga": "^1.14.7",
-    "nedb": "^1.8.0"
+    "nedb": "^1.8.0",
+    "winston": "^3.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
