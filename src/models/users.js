@@ -1,20 +1,25 @@
 import { UsersDB } from './index';
+import logger from '../logger';
 
 export const model = {
   // Get user details
   async getUser(id) {
-    return new Promise((resolve, rejects) => {
-      UsersDB.find(
-        { _id: id },
-        {
-          updatedAt: 0,
-          createdAt: 0
-        },
-        (err, user) => {
-          return resolve(user);
-        }
-      );
-    });
+    try {
+      return new Promise((resolve, rejects) => {
+        UsersDB.find(
+          { _id: id },
+          {
+            updatedAt: 0,
+            createdAt: 0
+          },
+          (err, user) => {
+            return resolve(user);
+          }
+        );
+      });
+    } catch (error) {
+      logger.log('error', error);
+    }
   },
 
   // Get each individual single user record

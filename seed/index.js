@@ -1,4 +1,5 @@
 import { UsersDB } from '../src/models';
+import logger from '../src/logger';
 import casual from 'casual';
 
 const users = [];
@@ -15,8 +16,8 @@ for (let index = 0; index < 50; index++) {
 
 UsersDB.insert(users, (err, docs) => {
   if (err) {
-    console.log('Something went wrong while seeding data');
+    logger.log('error', err);
   } else {
-    console.log('Database created successfully');
+    logger.log('info', 'seeding done successfully');
   }
 });
