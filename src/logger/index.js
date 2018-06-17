@@ -11,8 +11,10 @@ class Logger {
       ]
     });
   }
+
   log(level, msg, ...meta) {
     this.logger.log(level, msg, ...meta);
   }
 }
+
 export default new Logger();

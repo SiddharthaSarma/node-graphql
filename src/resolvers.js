@@ -1,4 +1,5 @@
 import { model } from './models/users';
+
 export const resolvers = {
   Query: {
     async getUser(_, { id }) {
@@ -11,15 +12,15 @@ export const resolvers = {
     }
   },
   Mutation: {
-    async addUser(_, { input }, context) {
+    async addUser(_, { input }) {
       const user = await model.addUser(input);
       return user;
     },
-    async updateUser(_, { input }, context) {
+    async updateUser(_, { input }) {
       const [user] = await model.updateUser(input);
       return user;
     },
-    async deleteUser(_, { id }, context) {
+    async deleteUser(_, { id }) {
       const result = await model.deleteUser(id);
       return result;
     }
