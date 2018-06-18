@@ -22,6 +22,5 @@ const options = {
 };
 
 server.start(options, ({ port }) => {
-  console.log('info', `The server is running on http://localhost:${port}`);
   logger.log('info', `The server is running on http://localhost:${port}`);
 });
