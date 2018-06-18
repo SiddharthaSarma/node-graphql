@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./src/index.js --exec babel-node -e js",
-    "seed": "babel-node ./seed/index.js"
+    "seed": "babel-node ./seed/index.js",
+    "build": "babel src -d dist && cp ./src/typedefs.graphql ./dist/",
+    "serve": "node ./dist/index.js"
   },
   "repository": {
     "type": "git",
